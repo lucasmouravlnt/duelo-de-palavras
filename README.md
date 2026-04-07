@@ -33,7 +33,7 @@ Um jogo interativo feito com HTML, CSS e JavaScript onde dois jogadores competem
 1. Clone ou baixe este repositório.
 
 ```bash
-https://github.com/lucasmouravlnt/duelo-de-palavras.git
+https://github.com/lucasmouravlnt/duelo-de-palavras
 ```
 
 2. Abra o arquivo `index.html` em seu navegador.
