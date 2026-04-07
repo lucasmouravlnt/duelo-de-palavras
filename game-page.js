@@ -55,19 +55,39 @@ function check(){
         }
     }
 
+    /*
     if(questionTurn == "player1"){
         questionTurn = "player2";
-        document.getElementById("player-question").innerHTML = `Turno de perguntas: ${player2Name}`
+        document.getElementById("player-question").innerHTML = `Turno de perguntas: ${player2Name}`;
+    }
+    else{
+        questionTurn = "player1";
+        document.getElementById("player-question").innerHTML = `Turno de perguntas: ${player1Name}`;
+    }
+    
+    if(answerTurn == "player1"){
+        answerTurn = "player2";
+        document.getElementById("player-answer").innerHTML = `Turno de resposta: ${player2Name}`;
+    }
+    else{
+        answerTurn = "player1";
+        document.getElementById("player-answer").innerHTML = `Turno de resposta: ${player1Name}`;
+    }
+    */
+
+    if(questionTurn == "player1"){
+        questionTurn = "player2";
+        document.getElementById("player-question").innerHTML = `Turno de perguntas: ${player2Name}`;
 
         answerTurn = "player1";
-        document.getElementById("player-answer").innerHTML = `Turno de respostas: ${player1Name}`;
+        document.getElementById("player-answer").innerHTML = `Turno de resposta: ${player1Name}`;
     }
     else{
         questionTurn = "player1";
         document.getElementById("player-question").innerHTML = `Turno de perguntas: ${player1Name}`;
 
         answerTurn = "player2";
-        document.getElementById("player-answer").innerHTML = `Turno de respostas: ${player2Name}`;
+        document.getElementById("player-answer").innerHTML = `Turno de resposta: ${player2Name}`;
     }
 
     document.getElementById("output").innerHTML = "";
