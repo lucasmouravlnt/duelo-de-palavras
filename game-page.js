@@ -2,18 +2,19 @@ let player1Name = localStorage.getItem("player1Name");
 let player2Name = localStorage.getItem("player2Name");
 let player1Score = 0;
 let player2Score = 0;
+let word = "";
 
-document.getElementById("player1Name").innerHTML = `${player1Name}: `;
+document.getElementById("player1-name").innerHTML = `${player1Name}: `;
 // document.getElementById("player1Name").innerHTML = player1Name + ": ";
-document.getElementById("player2Name").innerHTML = `${player2Name}: `;
-document.getElementById("player1Score").innerHTML = player1Score;
-document.getElementById("player2Score").innerHTML = player2Score;
-document.getElementById("playerQuestion").innerHTML = `Turno de pergunta: ${player1Name}`;
-document.getElementById("playerAnswer").innerHTML = `Turno de resposta: ${player2Name}`;
+document.getElementById("player2-name").innerHTML = `${player2Name}: `;
+document.getElementById("player1-score").innerHTML = player1Score;
+document.getElementById("player2-score").innerHTML = player2Score;
+document.getElementById("player-question").innerHTML = `Turno de pergunta: ${player1Name}`;
+document.getElementById("player-answer").innerHTML = `Turno de resposta: ${player2Name}`;
 
 function send(){
     let getWord = document.getElementById("word").value;
-    let word = getWord.toLowerCase();
+    word = getWord.toLowerCase();
 
     let charAt1 = word.charAt(1);
     let lengthDivide2 = Math.floor(word.length/2);
@@ -41,10 +42,10 @@ let questionTurn = "player1";
 let answerTurn = "player2";
 
 function check(){
-    let getAnswer = document.getElementById("input-check-box").value;
+ let getAnswer = document.getElementById("input-check-box").value;
     let answer = getAnswer.toLowerCase();
 
-    if(answer == word){
+    if(answer.trim() === word){
         if(answerTurn == "player1"){
             player1Score += 1;
             document.getElementById("player1-score").innerHTML = player1Score;
@@ -53,27 +54,16 @@ function check(){
             player2Score += 1;
             document.getElementById("player2-score").innerHTML = player2Score;
         }
+
+        document.getElementById("output").innerHTML = "<h3 style='color:green;'>✅ Acertou!</h3>";
+    }
+    else{
+        document.getElementById("output").innerHTML = "<h3 style='color:red;'>❌ Errou!</h3>";
     }
 
-    /*
-    if(questionTurn == "player1"){
-        questionTurn = "player2";
-        document.getElementById("player-question").innerHTML = `Turno de perguntas: ${player2Name}`;
-    }
-    else{
-        questionTurn = "player1";
-        document.getElementById("player-question").innerHTML = `Turno de perguntas: ${player1Name}`;
-    }
-    
-    if(answerTurn == "player1"){
-        answerTurn = "player2";
-        document.getElementById("player-answer").innerHTML = `Turno de resposta: ${player2Name}`;
-    }
-    else{
-        answerTurn = "player1";
-        document.getElementById("player-answer").innerHTML = `Turno de resposta: ${player1Name}`;
-    }
-    */
+    setTimeout(() => {
+        document.getElementById("output").innerHTML = "";
+    }, 2000);
 
     if(questionTurn == "player1"){
         questionTurn = "player2";
@@ -89,6 +79,4 @@ function check(){
         answerTurn = "player2";
         document.getElementById("player-answer").innerHTML = `Turno de resposta: ${player2Name}`;
     }
-
-    document.getElementById("output").innerHTML = "";
 }

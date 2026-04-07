@@ -1,6 +1,7 @@
 body{
-    background: pink;
-    color: blueviolet;
+    background: #0f172a; 
+    color: #e2e8f0;
+    font-family: 'Segoe UI', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -9,6 +10,24 @@ body{
     justify-content: center;
     align-items: center;
     }
+
+  button{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+   .btn-success{
+    background: #22c55e;
+  }
+
+   .btn-success:hover{
+    background: #16a34a;
+    transform: scale(1.05);
+  }
 
     .container{
         display: flex;
@@ -19,16 +38,54 @@ body{
    }
 
    .login-div{
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 16px;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   }
 
-  #player1-name-input, #player2-name-input{
+  .login-div:hover{
+    transform: translateY(-3px);
+  }
+
+   #player1-name-input, #player2-name-input{
     display: inline-block;
     margin-left: 3px;
     
+  }
+
+  input{
+    border-radius: 10px !important;
+    border: none !important;
+    padding: 10px;
+    background: #334155;
+    color: white;
+    outline: none;
+  }
+
+  input::placeholder{
+    color: #94a3b8;
+  }
+
+ h2{
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+ h3{
+    color: #94a3b8;
+  }
+
+  .player-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  #player-question,
+#player-answer{
+    color: white;
   }
